@@ -1,0 +1,32 @@
+// 指定目录tags生成
+ctags -R drivers/block/ include/ fs/ kernel/
+
+//指定目录文件cscope数据库生成
+find drivers/block/ include/ fs/ kernel/ -name "*.c" -o -name "*.h" > cscope.files
+cscope -b -q -k
+
+Ctrl-] – Go to the function definition (via ctags)
+
+:cs find f ext4.c – Find file
+
+:cs find s ext4_inode_csum – Find symbol
+
+:cs find g ext4_inode_csum – Find function definition
+
+:cs find c ext4_inode_csum – Find calls to function
+
+:cs find t ext4_inode_csum – Find text string
+
+Ctrl-t – Jump back
+
+//打开函数调用窗口
+:copen
+
+//关闭函数调用窗口
+:cclose
+
+//函数调用窗口下一条
+:cn
+
+//函数调用窗口上一条
+:cp
