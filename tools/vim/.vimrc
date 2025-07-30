@@ -66,3 +66,8 @@ syntax match FunctionCall "\<[a-zA-Z_][a-zA-Z0-9_]*\>\s*("
 highlight FunctionCall ctermfg=Yellow cterm=bold
 highlight Function ctermfg=Blue cterm=bold
 
+" Show tabs as → with trailing dots for spaces
+set list
+set listchars=tab:→-
+set tabstop=8
+
